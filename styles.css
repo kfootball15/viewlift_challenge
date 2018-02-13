@@ -1,0 +1,568 @@
+body{
+	height: 100%;
+	margin: 0;
+    background-color: #000;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 15px;
+}
+button {
+	-webkit-font-smoothing: inherit;
+	background: none;
+	border: 0;
+	cursor: pointer;
+	font: inherit;
+	letter-spacing: inherit;
+	margin: 0;
+	overflow: visible;
+	padding: 0;
+	text-align: inherit;
+	text-transform: inherit;
+}
+a {
+	text-decoration: none;
+}
+
+#container {
+	margin: 0 auto;
+}
+
+/*Main Nav*/
+.main-nav-container{
+	background-color: #000;
+	display: flex;
+	height:70px;
+	justify-content: space-between;
+	position: fixed;
+	width: 100%;
+	z-index: 1;
+    position: relative;
+}
+.hamburger-button {
+	display: none;
+	color: #fff;
+    content: "\f394";
+    font-family: Ionicons;
+    font-size: 3em;
+    vertical-align: middle;
+    padding: 20px 0 20px 10px;
+    cursor: pointer;
+}
+.hamburger-menu-content {
+	background: #000;
+	bottom: 0;
+	box-shadow: 1px 2px 10px 0 rgba(0,0,0,0.5);
+	color: #fff;
+	height: 100%;
+	left: 0; 
+	max-width: 70%; 
+	padding: 20px;  
+	position: fixed; 
+	top: 0; 
+	transform: translate(-999px, 0); 
+	transition: transform 0.5s; 
+	width: 250px;
+	z-index: 99;
+}
+.hamburger-menu-content.active {
+	transform: translate(0, 0); 
+}
+.hamburger-menu-close-wrapper {
+	margin-bottom: 30px;
+	padding-right: 9px;
+}
+.hamburger-menu-close-wrapper .hamburger-menu-close {
+	float: right;
+    color: #fff;
+    content: "\f36e";
+    cursor: pointer;
+    display: block;
+    font-family: Ionicons;
+    font-size: 2em;
+    height: 40px;
+    padding-left: 20px;
+    width: 40px;
+}
+.hamburger-menu-content .menu-list {
+  	padding-right: 20px;
+  	padding-left: 20px;
+}
+.hamburger-menu-content .menu-item {
+  	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  	cursor: pointer;
+  	font-size: 3em;
+  	height: 50px;
+  	line-height: 50px;
+  	list-style: none;
+  	margin: 0;
+  	padding: 0;
+  	padding: 60px 0px 8px 0px;
+}
+.hamburger-menu-content .menu-item:hover{
+
+}
+
+.hamburger-menu-content .menu-item:last-child {
+  	border-bottom: none;
+}
+
+.hamburger-backdrop {
+	background-color: black;
+	bottom: 0;
+	display: none;
+	left: 0;
+	opacity: 0.3;
+	position: fixed;
+	right: 0;
+	top: 0;
+	transition: opacity 0.3s
+	z-index: 90;
+}
+
+.hamburger-backdrop.active {
+  	display: block;
+}
+.main-logo-container{
+	align-items: center;
+	height: 100%;
+	margin-left: 50px;
+    vertical-align: middle;
+}
+.main-logo-container a {
+	height: 100%;
+}
+.main-logo-container img {
+    border: 0;
+    max-height: 100%;
+    padding: 8px;
+    width: 250px;
+}
+.main-nav-items{
+	margin-left: 40px;
+	align-items: center;
+	display: inline-block;
+    vertical-align: middle;
+    flex: 1;
+    padding-top: 22px;
+}
+.main-nav-items .nav-item {
+	display: inline-block;
+	font-size: 1em;
+	padding: 5px 15px;
+	text-transform: uppercase;
+}
+.main-nav-items .nav-item a {
+	color: #fff;
+	text-decoration: none;
+}
+.main-nav-items .nav-item a:hover,  .sub-nav-item img:hover, .sub-nav-item button:hover, .menu-list .menu-item:hover  {
+	color: hsla(0,0%,100%,.75);
+	cursor: pointer;
+}
+.sub-nav-items{
+	align-items: center;
+	display: flex;
+	margin-right: 35px;
+}
+.sub-nav-item{
+	flex-grow: 1;
+    vertical-align: middle;
+}
+.nav-search {
+	padding: 5px 30px 5px 0px;
+}
+.nav-search img{
+	margin-right: 25px;
+	width: 30px;
+}	
+.nav-login button{
+	color: #fff;
+    font-weight: 400;
+    outline: none;
+}
+.nav-login{
+    font-size: .8em;
+	padding: 5px 30px 5px 0px;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+@media (max-width:1000px) {
+	.hamburger-button {
+		display: block;
+	}
+	.main-nav-items{
+		display: none;
+	}
+	.main-logo-container{
+		margin: 0 auto;
+	}
+}
+@media (max-width:600px) {
+	.main-nav-items {
+		display: none;
+	}
+	.nav-search {
+	    padding: 5px 5px 5px 0px;
+	}
+}
+@media (max-width:500px) {
+	.nav-login {
+   		font-size: .8em;
+    	padding: 5px 10px 5px 0px;
+    }
+}
+
+
+
+
+
+
+/* Carousel - moviesHero */
+.hero-carousel{
+	width: 100vw;
+	box-sizing: border-box;
+	display: block;
+	max-height: 500px;
+	overflow: hidden;
+	position: relative;
+}
+ui-carousel.hero-carousel{
+	margin-bottom: 0;
+}
+ui-carousel.hero-carousel .slide {
+	height: 100%;
+}
+.hero-carousel .carousel-item{
+	height: 100%;
+	width: 100%;
+}
+.ui-carousel div.carousel-wrapper {
+	position: static;
+}
+.ui-carousel div.track {
+	height: inherit;
+	position: static;
+	max-height: 500px;
+}
+.hero-image-container {
+	height: 100%;
+	position: relative;
+}
+.hero-image-container img {
+	width: 100%;
+	/*height: 100%;*/
+}
+.hero-title{
+	position: absolute;
+    background: linear-gradient(180deg,transparent 0,#000);
+    bottom: 0px;
+    padding: 0 3vw 80px;
+    width: 100vw;
+}
+.hero-details {
+    color: #fff;
+    display: flex;
+    line-height: 0;
+	justify-content: flex-start;
+	padding: 10px 0;
+}
+.hero-sub {
+	margin-left: 8px;
+	display: inline-block;
+}
+.hero-info h1{
+	display: inline-block;
+	font-size: 2em;
+	flex-grow: 3;
+	font-weight: 700;
+	vertical-align: bottom;
+}
+.hero-info .hero-sub h2{
+	color: hsla(0,0%,100%,.75);
+	display: inline-block;
+	font-size: 1em;
+	font-weight: 100;
+	text-transform: uppercase;
+	vertical-align: bottom;
+}
+.hero-button a{
+	background: #008ee0;
+	display: block;
+    border-color: #008ee0;
+    border-radius: 0px;
+    border-style: solid;
+    border-width: 1px;
+    color: #ffffff;
+    font-size: .9em;
+    cursor: pointer;
+    margin-right: 10px;
+    padding: 10px 0;
+    text-align: center;
+	text-decoration: none;
+    text-transform: uppercase;
+    width: 160px;
+}
+.hero-button a:hover {
+	background: #34b5ff;
+}
+ul.carousel-dots{
+	bottom: 20px;
+}
+ul.carousel-dots li button:before {
+    color: #aaa;
+}
+.hero-slider-button {
+	color: #008ee0;
+    background: transparent;
+    cursor: pointer;
+    height: 60px;
+    line-height: 1;
+    opacity: .75;
+    width: 60px;
+}
+div.carousel-prev {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+}
+div.carousel-next {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+}
+.carousel-prev button.hero-slider-button:before {
+    content: "\f124";
+    font-family: Ionicons;
+	font-size: 60px;
+}
+.carousel-next button.hero-slider-button:before {
+    content: "\f125";
+    font-family: Ionicons;
+	font-size: 60px;
+}
+.carousel-next button.hero-slider-button:hover, .carousel-prev button.hero-slider-button:hover {
+	opacity: 1;
+}
+.hero-watch-button {
+	display: none;
+}
+@media (max-width:600px) {
+	.hero-details {
+		justify-content: center;
+		line-height: 0;
+	}
+	.hero-info h1 {
+		display: inline-block;
+		font-size: 1.2em;
+		flex-grow: 3;
+		font-weight: 500;
+		vertical-align: bottom;
+		text-align:center; 
+	}
+	.hero-title {
+		padding-left:0;
+		padding-bottom: 80px;
+	}
+	.hero-sub {
+		display: block;
+		text-align: center;
+	}
+	.hero-info .hero-sub h2{
+		color: hsla(0,0%,100%,.75);
+		display: inline-block;
+		font-size: .9em;
+		font-weight: 100;
+		text-transform: uppercase;
+		vertical-align: bottom;
+	}
+	.hero-button {
+		display: none;
+	}
+	.carousel-prev button.hero-slider-button {
+	    display: none;
+	}
+	.carousel-next button.hero-slider-button {
+	    display: none;
+	}
+	.carousel-prev button.prev-button.event-slider-button {
+		left: -40px;
+	}
+	.carousel-next button.next-button.event-slider-button {
+	    right: -30px;
+	}
+	.hero-watch-button {
+		background-color: #000000;
+		color: #008ee0;
+		display: block;
+		opacity: .25;
+	    background: transparent;
+	    border: none;
+	    cursor: pointer;
+	    height: 100%;
+	    outline: none;
+	    position: absolute;
+	    top: 0px;
+	    width: 100%;
+	    z-index: 10;
+	    cursor: pointer;
+	}
+	.hero-watch-button:hover{
+		background-color: #000000;
+		opacity: .75;
+	}
+	a.hero-watch-button:before {
+	    content: "\f488";
+	    font-family: Ionicons;
+	    font-size: 60px;
+	    height: 40px;
+	    left: 50%;
+	    margin-left: -17px;
+	    margin-top: -10px;
+	    opacity: 1;
+	    position: absolute;
+	    top: 40%;
+	    width: 40px;
+	    cursor: pointer;
+	}
+}
+@media (max-width:450px) {
+	a.hero-watch-button:before {
+	    top: 25%;
+	}
+}
+
+
+
+/* Carousel - moviesList */
+.event-container{
+	box-sizing: border-box;
+	display: block;
+	margin: 30px 50px;
+	position: relative;
+}
+.event-container .carousel-item {
+	padding: 0 5px;
+}
+.ui-carousel .carousel-next button.carousel-btn {
+    font-size: 3.5em;
+    right: 25px;
+}
+.ui-carousel .carousel-prev button.carousel-btn {
+    font-size: 3.5em;
+    left: 25px;
+}
+.event-details-container{
+    color: #fff;
+    height: 50px;
+}
+.event-details-container span {
+    color: #d3d3d3;
+    font-size: .9em;
+    font-weight: 600;
+    letter-spacing: -.03em;
+    opacity: 1;
+    transition: opacity .5s;
+    word-break: break-word;
+}
+.events-title-container h1{
+	color: #008ee0;
+    border-bottom: 1px solid #666;
+    font-size: 1.5em;
+    font-weight: 600;
+    letter-spacing: .05em;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+.event-image-container {
+	position: relative;
+	width: 100%;
+}
+.event-image-container img {
+	max-width: 100%;
+}
+
+.carousel-next button.event-slider-button {
+    right: 10px;
+    text-align: right;
+}
+.event-slider-button {
+	color: #008ee0;
+	display: block;
+	font-size: 0;
+    -moz-osx-font-smoothing: grayscale;
+    -ms-transform: translateY(-50%);
+    -webkit-font-smoothing: antialiased;
+    -webkit-transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    height: 60px;
+    line-height: 0;
+    line-height: 1;
+    opacity: .75;
+    outline: none;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+}
+.carousel-prev button.event-slider-button:before {
+    content: "\f124";
+    font-family: Ionicons;
+	font-size: 40px;
+	padding-left: 10px;
+}
+.carousel-next button.event-slider-button:before {
+    content: "\f125";
+    font-family: Ionicons;
+	font-size: 40px;
+}
+.carousel-next button.event-slider-button:hover, .carousel-prev button.event-slider-button:hover {
+	opacity: 1;
+}
+.watch-button {
+	-moz-transition: opacity .25s ease-in-out;
+	-webkit-transition: opacity .25s ease-in-out;
+	color: #008ee0;
+	display: block;
+	opacity: 0;
+	transition: opacity .25s ease-in-out;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    height: 100%;
+    outline: none;
+    position: absolute;
+    top: 0px;
+    left:-1px;
+    width: 101%;
+}
+.watch-button:hover{
+	background-color: #000000;
+	opacity: .75;
+}
+div.watch-button:before {
+    content: "\f488";
+    font-family: Ionicons;
+    font-size: 60px;
+    height: 40px;
+    left: 50%;
+    margin-left: -17px;
+    margin-top: -10px;
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    cursor: pointer;
+}
+@media (max-width:600px) {
+	div.watch-button:before {
+		font-size: 20px;
+		margin-left:-6px;
+	}
+	.event-details-container {
+		font-size:.7em;
+	}
+}
+
